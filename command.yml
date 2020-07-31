@@ -2,4 +2,5 @@
   hosts: all
   tasks:
     - name: Command Message
-      command: ls -al
+      debug:
+        msg: "My AWX command test"
