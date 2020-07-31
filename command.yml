@@ -2,4 +2,4 @@
   hosts: all
   tasks:
     - name: Command Message
-      shell: ls -al
+      command: ls -al
