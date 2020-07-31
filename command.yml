@@ -1,6 +1,6 @@
-- name: remote server command
+- name: Hello World Sample
   hosts: all
   tasks:
-    - name: Command Message
+    - name: Hello Message
       debug:
-        msg: "My AWX command test"
+        msg: "My AWX test"
