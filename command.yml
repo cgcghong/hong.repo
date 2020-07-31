@@ -1,0 +1,7 @@
+- name: remote server command
+  hosts: all
+  tasks:
+    - name: Command Message
+      shell: echo "hello world test"
+      debug:
+        msg: "My AWX command test"
