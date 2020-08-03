@@ -4,3 +4,5 @@
     - name: Hello Message
       debug:
         msg: "My AWX test"
+    - name: ls Message
+      command: ls -al /
