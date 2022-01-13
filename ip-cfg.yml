@@ -1,0 +1,29 @@
+- name: Test
+  hosts: all
+  tasks:
+   - name: create ifcfg-eth0 on vm from vcenter
+     #community.vmware.vmware_vm_shell:
+     vmware_vm_shell:
+        hostname: "vc.east-2.archi.lab"
+        username: "root"
+        password: "!Dkzlxprxm00!"
+        datacenter: "east-2"
+        vm_id: "stress-centos01"
+        vm_username: "root"
+        vm_password: "vmware1!"
+        vm_shell: /bin/echo
+        vm_shell_args: "$VAR > ifcfg-ens192"
+        vm_shell_env:
+          - "PATH=/bin"
+          - 'VAR= -e
+        DEVICE=ens192\n
+        NAME=ens192\n
+        ONBOOT=yes\n
+        NM_CONTROLLED=no\n
+        BOOTPROTO=static\n
+        IPADDR=192.168.50.211\n
+        GATEWAY=192.168.50.1\n
+        DNS=192.168.10.10\n
+        PREFIX=24
+         '
+        vm_shell_cwd: "/etc/sysconfig/network-scripts/"
